@@ -26,4 +26,3 @@ var reverseWords = function(s) {
             return ele}
             ).join(" ")
 };
-
