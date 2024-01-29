@@ -17,50 +17,21 @@ I can be placed before V (5) and X (10) to make 4 and 9.
 X can be placed before L (50) and C (100) to make 40 and 90. 
 C can be placed before D (500) and M (1000) to make 400 and 900.
 Given an integer, convert it to a roman numeral.
-
-Example 1:
-Input: num = 3
-Output: "III"
-Explanation: 3 is represented as 3 ones.
-
-Example 2:
-Input: num = 58
-Output: "LVIII"
-Explanation: L = 50, V = 5, III = 3.
-
-Example 3:
-Input: num = 1994
-Output: "MCMXCIV"
-Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
-*/
-
-// solution
-
-var intToRoman = function(num){
-    let res = ""
-    const numerals = {
-        "M": 1000, 
-        "CM": 900, 
-        "D": 500, 
-        "CD": 400,
-        "C": 100, 
-        "XC": 90, 
-        "L": 50, 
-        "XL": 40,
-        "X": 10, 
-        "IX": 9, 
-        "V": 5, 
-        "IV": 4, 
-        "I": 1
-    }
-
-    for(let [roman, values] of Object.entries(numerals)){
-        while(num >= values){
-            num -= values
-            res += roman
-        }
-    }
-
-    return res
-}
-
+ */
+var intToRoman = function(num) {
+    let res = "";
+       const numerals = {
+           "M": 1000, "CM": 900, "D": 500, "CD": 400,
+           "C": 100, "XC": 90, "L": 50, "XL": 40,
+           "X": 10, "IX": 9, "V": 5, "IV": 4, "I": 1
+       };
+   
+       for (const [roman, value] of Object.entries(numerals)) {
+           while (num >= value) {
+               res += roman;
+               num -= value;
+           }
+       }
+   
+       return res;
+   };
