@@ -22,5 +22,7 @@ Output: false
  */
 
 // solution
-const isPowerOfTwo = n => Number.isInteger(Math.log(n) / Math.log(2))
+function powerOfTwo(n){
+    return Math.log(n) % 1 === 0 && n > 0
+}
 
